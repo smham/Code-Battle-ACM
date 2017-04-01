@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+int CheckDay(char day[100], int length)
+{
+	for(int i = 0; i < length/2 ; i++)
+		if(day[i] != day[length -1 -i]) return 0;
+	return 1;	
+}
+int main()
+{
+	int numTest;
+	cin >> numTest;
+	int count = 0;
+	while(count != numTest)
+	{
+		string Date;
+		char DateAf[100];
+		int k = 0;
+		cin >> Date;
+		for(int i = 0; i < Date.length(); i++)
+		{
+			if(Date[i] != '-')
+			{
+				DateAf[k] = Date[i];
+				k++;
+			}
+		}
+	
+		if(CheckDay(DateAf, k)) cout << "YES"<< endl;
+		else cout << "NO";
+	
+	count ++;
+	}
+	
+	return 0;
+}
