@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+int myXOR(int x, int y)
+{
+    int result = 0;
+
+    for (int i = 31; i >= 0; i--)//Assume the number is 32 bit integer not 64 bit                     
+    {
+       bool b1 = x & (1 << i);
+       bool b2 = y & (1 << i);
+        
+        bool xoredBit = (b1 & b2) ? 0 : (b1 | b2);          
+ 
+        result <<= 1;
+        result |= xoredBit;
+    }
+    return result;
+}
+int main()
+{
+	int s,x;
+	cin >> s >> x;
+	int count = 0;
+	for(int i = 1; i < s; i ++)
+		for(int j = i; j < s; j++)
+			if(i + j == s && myXOR(i,j) == x) count ++;
+	cout << count * 2;
+	
+	return 0;	
+}
