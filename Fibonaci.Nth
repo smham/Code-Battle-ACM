@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+string FibonaciNth(int n)
+{
+	if(n == 1) return "A";
+	if(n == 2) return "B";
+	else return FibonaciNth(n - 1) + FibonaciNth(n - 2);
+}
+int main()
+{
+	int numTest;
+	cin >> numTest;
+	for(int k = 0; k < numTest; k ++)
+	{
+		int n,i; 
+		cin >> n >> i;
+		string temp;
+		temp = FibonaciNth(n);
+		cout << temp[i];
+	}
+	
+	return 0;
+}
