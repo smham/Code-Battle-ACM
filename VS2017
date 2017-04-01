@@ -5,7 +5,7 @@ int VS2017(int n, int x, int y)
 {
 	if( n == 1) return x;
 	if(n % 2 == 0) return y+VS2017(n / 2, x, y);
-	if(n % 2 == 1 ) return min(VS2017(n-1, x, y),VS2017(n+1, x, y));
+	if(n % 2 == 1 ) return x+min(VS2017(n-1, x, y),VS2017(n+1, x, y));
 }
 int main()
 {
