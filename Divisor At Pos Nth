@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+int DivisorAtPosNth(int num,int pos)
+{
+	int count = 0;
+	for(int i = 1; i < num; i ++)
+	{
+		if(num % i == 0) count ++;
+		if(count == pos) return i; 
+	}
+}
+int main()
+{
+	int num, pos;
+	cin >> num >> pos;
+	cout << DivisorAtPosNth(num, pos);
+	
+	return 0;
+}
